@@ -1,5 +1,11 @@
 ### Users notes
 
+#### Get user account
+
+```PowerShell
+Get-LocalUser -Name "Administrator"
+```
+
 #### Store password in file
 
 ```PowerShell
