@@ -33,7 +33,7 @@ Disable-LocalUser -Name "guest"
 #### Find default local admin account (known SID)
 
 ```PowerShell
-Get-WmiObject Win32_useraccount |Where-Object {$_.SID -like 'S-1-5-21-*-500'}
+Get-WmiObject Win32_useraccount | Where-Object {$_.SID -like 'S-1-5-21-*-500'}
 ```
 
 #### Rename a local account
@@ -46,4 +46,14 @@ Rename-LocalUser -Name "Administrator" -NewName "user1"
 
 ```PowerShell
 Set-LocalUser -Name "Administrator" -Description "temporary account."
+```
+
+#### Create new local account
+
+```PowerShell
+New-LocalUser -Password "mypassw0rd" -Name "manager" -Description "Temporary account for testing purposes."
+```
+
+```PowerShell
+New-LocalUser -Password "mypassw0rd" -Name "manager" -Description "Temporary account for testing purposes." -AccountNeverExpires -PasswordNeverExpires
 ```

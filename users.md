@@ -24,3 +24,16 @@ $password = Get-Content $filename | ConvertTo-SecureString
 $password = Get-Content $filename | ConvertTo-SecureString
 $plaintext = (New-Object PSCredential "user", $password).GetNetworkCredential().Password
 ```
+
+#### Check if local user exists
+
+```PowerShell
+$user = Get-LocalUser -Name "admin01" -ErrorAction SilentlyContinue
+
+if (!$user) {
+    # ....
+}
+else {
+    # ....
+}
+```
