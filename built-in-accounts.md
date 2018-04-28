@@ -61,5 +61,8 @@ New-LocalUser -Password "mypassw0rd" -Name "manager" -Description "Temporary acc
 #### Add user to Groups
 
 ```PowerShell
-Add-LocalGroupMember -Group "Administrators", "Power Users", "Remote Desktop Users", "Users" -Member "manager"
+Add-LocalGroupMember -Group "Administrators" -Member "manager"
+Add-LocalGroupMember -Group "Power Users" -Member "manager"
+Add-LocalGroupMember -Group "Remote Desktop Users" -Member "manager"
+Add-LocalGroupMember -Group "Users" -Member "manager"
 ```
