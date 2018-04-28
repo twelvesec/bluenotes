@@ -28,12 +28,10 @@ $plaintext = (New-Object PSCredential "user", $password).GetNetworkCredential().
 #### Check if local user exists
 
 ```PowerShell
-$user = Get-LocalUser -Name "admin01" -ErrorAction SilentlyContinue
-
-if (!$user) {
-    # ....
+if ((Get-LocalUser -Name "admin01" -ErrorAction Ignore).Count -eq 1) {
+    Return $True
 }
 else {
-    # ....
+    Return $False
 }
 ```

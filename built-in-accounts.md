@@ -57,3 +57,9 @@ New-LocalUser -Password "mypassw0rd" -Name "manager" -Description "Temporary acc
 ```PowerShell
 New-LocalUser -Password "mypassw0rd" -Name "manager" -Description "Temporary account for testing purposes." -AccountNeverExpires -PasswordNeverExpires
 ```
+
+#### Add user to Groups
+
+```PowerShell
+Add-LocalGroupMember -Group "Administrators", "Power Users", "Remote Desktop Users", "Users" -Member "manager"
+```
